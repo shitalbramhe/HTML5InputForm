@@ -51,3 +51,16 @@ tel.addEventListener('input', function () {
         telError.textContent = "Moble number is not Valid";
     }
 });
+
+//uc4-Validating password min 8 characters
+const pwd = document.querySelector('#pwd');
+const pwdError = document.querySelector('.pwd-error');
+pwd.addEventListener('input', function () {
+    let pwdRegex = RegExp('^.{8,}$');
+    if (pwdRegex.test(pwd.value)) {
+        pwdError.textContent = "";
+    }
+    else {
+        pwdError.textContent = "password is not Valid";
+    }
+});
