@@ -64,3 +64,16 @@ pwd.addEventListener('input', function () {
         pwdError.textContent = "password is not Valid";
     }
 });
+
+//uc5- one spl char, atleast one digit capital letter and 1 numeric number in the password
+const pwd = document.querySelector('#pwd');
+const pwdError = document.querySelector('.pwd-error');
+pwd.addEventListener('input', function () {
+    let pwdRegex = RegExp('^(?=.*[0-9])(?=.*[A-Z])(?=.*[^0-9a-zA-Z])(?!.*[^0-9a-zA-Z].*[^0-9a-zA-Z]).{8,}$');
+    if (pwdRegex.test(pwd.value)) {
+        pwdError.textContent = "";
+    }
+    else {
+        pwdError.textContent = "password is not Valid";
+    }
+});  
