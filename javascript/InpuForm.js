@@ -19,3 +19,20 @@ text.addEventListener('input', function () {
         textError.textContent = "Name is Incorrect";
     }
 });
+
+//UC2 Validating Email
+const email = document.querySelector('#email');
+const emailError = document.querySelector('.email-error');
+email.addEventListener('input', function()
+    {
+        let emailRegex = RegExp("^([a-zA-z]+)([a-zA-Z0-9_\.\-]+)@([a-z]+)\.([a-zA-Z]{2,4})\.([a-zA-Z]{2})?$");
+        if(emailRegex.test(email.value))
+        {
+            emailError.textContent = " ";
+        }
+        else
+        {
+            emailError.textContent = "Email is not valid";
+
+        }
+    });
